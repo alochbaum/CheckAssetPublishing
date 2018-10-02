@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckPublishing"
         mc:Ignorable="d"
-        Title="Program checks Asset Publishing in XMS and EXMS databases." Height="169.648" Width="429.074">
+        x:Name="MainWin"
+        Title="Program checks Asset Publishing in XMS and EXMS databases." Height="189.776" Width="429.074">
     <Grid Margin="0,0,-6,0.2">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -20,7 +22,7 @@
             <TextBox x:Name="tbName"></TextBox>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Button x:Name="btTestXMS" Margin="6,0,0,0">Test Local XMS</Button>
+            <Button x:Name="btTestXMS" Margin="6,0,0,0.2" Click="btTestXMS_Click" Height="19" VerticalAlignment="Bottom">Test Local XMS</Button>
             <TextBox x:Name="tbOut"></TextBox>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
@@ -28,14 +30,14 @@
             <TextBox x:Name="tbIP"></TextBox>
         </StackPanel>
         <StackPanel Grid.Row="3" Orientation="Horizontal">
-            <Button x:Name="btTestEXMS" Margin="6,0,0,0">Test Remote EXMS</Button>
+            <Button x:Name="btTestEXMS" Margin="6,0,0,0" Click="btTestEXMS_Click">Test Remote EXMS</Button>
             <TextBox x:Name="tbOut2"></TextBox>
         </StackPanel>
         <StackPanel Grid.Row="4" Orientation="Horizontal">
-            <Label x:Name="Result">Results: No asset name entered</Label>
+            <Label x:Name="Result">Results: No button clicked</Label>
         </StackPanel>
         <StackPanel Grid.Row="5" Orientation="Horizontal">
-            <Button x:Name="btnAppData" Margin="6,0,0,0">Edit App Settings</Button>
-            </StackPanel>
+            <Button x:Name="btnAppData" Margin="6,0,0,0" Click="btnAppData_Click">Edit App Settings</Button>
+        </StackPanel>
     </Grid>
 </Window>
