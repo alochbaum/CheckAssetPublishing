@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckPublishing"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Program checks Asset Publishing in XMS and EXMS databases." Height="169.648" Width="429.074">
+    <Grid Margin="0,0,-6,0.2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label>Asset Name:</Label>
+            <TextBox x:Name="tbName"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="btTestXMS" Margin="6,0,0,0">Test Local XMS</Button>
+            <TextBox x:Name="tbOut"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Label>Remote EXMS IP:</Label>
+            <TextBox x:Name="tbIP"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <Button x:Name="btTestEXMS" Margin="6,0,0,0">Test Remote EXMS</Button>
+            <TextBox x:Name="tbOut2"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Orientation="Horizontal">
+            <Label x:Name="Result">Results: No asset name entered</Label>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Orientation="Horizontal">
+            <Button x:Name="btnAppData" Margin="6,0,0,0">Edit App Settings</Button>
+            </StackPanel>
     </Grid>
 </Window>
