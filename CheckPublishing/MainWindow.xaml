@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CheckPublishing"
         mc:Ignorable="d"
         x:Name="MainWin"
-        Title="Program checks Asset Publishing in XMS and EXMS databases." Height="189.776" Width="429.074">
+        Title="Program checks Asset Publishing in XMS and EXMS databases." Height="190" Width="460">
     <Grid Margin="0,0,-6,0.2">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -38,6 +38,8 @@
         </StackPanel>
         <StackPanel Grid.Row="5" Orientation="Horizontal">
             <Button x:Name="btnAppData" Margin="6,0,0,0" Click="btnAppData_Click">Edit App Settings</Button>
+
+            <Button x:Name="btnAppInfo" Margin="6,0,0,0" Height="19" VerticalAlignment="Top" Click="btnAppInfo_Click" >Information about results</Button>
         </StackPanel>
     </Grid>
 </Window>

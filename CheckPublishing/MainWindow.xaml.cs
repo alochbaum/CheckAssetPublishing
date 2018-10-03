@@ -36,8 +36,12 @@ namespace CheckPublishing
             if (tbName.Text.Length > 2) {
                 DataAccess db = new DataAccess();
                 lAss= db.GetDAssets(tbName.Text,"XMS");
-                tbOut.Text =  lAss[0].master_state.ToString();
-                Result.Content = $"XMS type {lAss[0].asset_type}";
+                if ((lAss != null) && (lAss.Count > 0))
+                {
+                    tbOut.Text = lAss[0].master_state.ToString();
+                    Result.Content = $"XMS type {lAss[0].asset_type}";
+                }
+                else Result.Content = "XMS asset search returned no results or failed";
             } else
             {
                 MessageBox.Show("In asset name type the name of a clip or image");
@@ -50,8 +54,12 @@ namespace CheckPublishing
             {
                 DataAccess db = new DataAccess();
                 lAss = db.GetDAssets(tbName.Text, "EXMS", tbIP.Text);
-                tbOut2.Text = lAss[0].master_state.ToString();
-                Result.Content = $"EXMS type {lAss[0].asset_type}";
+                if ((lAss != null) && (lAss.Count > 0))
+                {
+                    tbOut2.Text = lAss[0].master_state.ToString();
+                    Result.Content = $"EXMS type {lAss[0].asset_type}";
+                }
+                else Result.Content = "EXMS remote search returned no results or failed";
             }
             else
             {
@@ -62,6 +70,11 @@ namespace CheckPublishing
         private void btnAppData_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("notepad.exe", AppDomain.CurrentDomain.BaseDirectory + "\\CheckPublishing.exe.config");
+        }
+
+        private void btnAppInfo_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Vertigo publishing status compares the master_state number in the two databases, if these numbers are equal then there is nothing to publish, use buttons to check the master_state number in XMS and remote device EXMS");
         }
     }
 }
