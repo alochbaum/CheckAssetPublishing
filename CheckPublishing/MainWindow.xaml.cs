@@ -41,7 +41,11 @@ namespace CheckPublishing
                     tbOut.Text = lAss[0].master_state.ToString();
                     Result.Content = $"XMS type {lAss[0].asset_type}";
                 }
-                else Result.Content = "XMS asset search returned no results or failed";
+                else
+                {
+                    Result.Content = "XMS asset search returned no results or failed";
+                    tbOut.Text = "";
+                }
             } else
             {
                 MessageBox.Show("In asset name type the name of a clip or image");
@@ -59,7 +63,11 @@ namespace CheckPublishing
                     tbOut2.Text = lAss[0].master_state.ToString();
                     Result.Content = $"EXMS type {lAss[0].asset_type}";
                 }
-                else Result.Content = "EXMS remote search returned no results or failed";
+                else
+                {
+                    Result.Content = "EXMS remote search returned no results or failed";
+                    tbOut2.Text = "";
+                }
             }
             else
             {
